@@ -143,6 +143,23 @@
 </article>
 
 <article class="case">
+  <h3>GTIN crawler: product data from a barcode</h3>
+  <p class="role">Created it · built v1.0 · Java 21 + Spring Boot 3 · Jul – Oct 2025</p>
+  <p>Typing product details into a catalogue by hand is slow and error-prone. I built a service that takes a barcode (GTIN/EAN) and returns the product's data, ready to register.</p>
+  <h4>What I built</h4>
+  <ul>
+    <li>A REST API that looks up a barcode and returns name, image, weight, measurement unit and suppliers in one normalised response.</li>
+    <li>Product pages are rendered by a headless-browser service, which has its own session manager so sessions are reused across requests.</li>
+    <li>HTML is parsed with jsoup, with one extractor per field. Each extractor can be tested and changed on its own when a source's layout changes.</li>
+    <li>Later added measurement-unit extraction, so products arrive with the unit they are sold in.</li>
+    <li>Docker Compose runs the API and the browser service together with health checks. The API is documented with OpenAPI / Swagger.</li>
+  </ul>
+  <h4>Where it went</h4>
+  <p>The design held up: the team later added more product sources (including Open Food Facts) behind the same lookup interface, and the service is still maintained.</p>
+  <div class="chips"><span class="chip">Java 21</span><span class="chip">Spring Boot 3</span><span class="chip">jsoup</span><span class="chip">OkHttp</span><span class="chip">WebFlux</span><span class="chip">Docker Compose</span><span class="chip">OpenAPI</span></div>
+</article>
+
+<article class="case">
   <h3>More across the platform</h3>
   <ul>
     <li><b>Reports:</b> ABC-curve (Pareto) product report, unsold products, sales charts per point of sale.</li>
@@ -151,7 +168,6 @@
     <li><b>Real-time telemetry alerts:</b> critical kiosk alerts pushed over SSE to a banner in the admin.</li>
     <li><b>Stock tasks:</b> picking and restocking now start without one stock query per item.</li>
     <li><b>Shared data table:</b> barcode scan-to-search, debounced search, selection that persists.</li>
-    <li><b>Barcode product lookup service</b> (Spring Boot): built the first version.</li>
     <li><b>Customer and developer docs</b> (Docusaurus, Astro Starlight): fiscal, financial and CRM sections, plus search.</li>
   </ul>
 </article>
