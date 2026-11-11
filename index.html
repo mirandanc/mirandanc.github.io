@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arthur · Full-stack engineer</title>
+<meta name="description" content="Full-stack engineer from Brazil: Kotlin Multiplatform, React + TypeScript and Java / Spring Boot. Case studies of products I built.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7; --surface: #ffffff; --text: #1d1d1f; --muted: #5f6368; --line: #e6e3dc;
+    --accent: #0f766e; --accent-soft: #e6f4f1; --chip: #f1efea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111315; --surface: #181b1e; --text: #ececec; --muted: #a0a6ad; --line: #2a2f34;
+      --accent: #5eead4; --accent-soft: #11302c; --chip: #22272b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 64px 0 32px; }
+  h1 { font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .lead { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin: 0 0 20px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { display: inline-block; padding: 8px 14px; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; color: var(--text); background: var(--surface); font-weight: 500; font-size: .95rem; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 32px 0 8px; }
+  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .stat b { display: block; font-size: 1.5rem; letter-spacing: -0.02em; }
+  .stat span { color: var(--muted); font-size: .88rem; }
+  h2 { font-size: 1.4rem; margin: 56px 0 8px; letter-spacing: -0.01em; }
+  .section-intro { color: var(--muted); margin: 0 0 20px; }
+  .case { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px; margin: 0 0 20px; }
+  .case h3 { margin: 0 0 4px; font-size: 1.2rem; }
+  .role { color: var(--accent); font-weight: 600; font-size: .92rem; margin: 0 0 12px; }
+  .case p { margin: 0 0 12px; }
+  .case h4 { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 18px 0 6px; }
+  .case ul { margin: 0; padding-left: 20px; }
+  .case li { margin: 4px 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .chip { font: 500 .78rem/1 "JetBrains Mono", monospace; background: var(--chip); padding: 6px 8px; border-radius: 6px; }
+  .note { background: var(--accent-soft); border-radius: 10px; padding: 14px 16px; font-size: .95rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .grid .case { margin: 0; }
+  footer { color: var(--muted); font-size: .9rem; padding: 48px 0 64px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Hi, I'm Arthur.<br>I build products end to end.</h1>
+  <p class="lead">Full-stack engineer from Brazil. I work on Kotlin Multiplatform mobile apps, React + TypeScript web apps and Java 21 / Spring Boot APIs, and I write tests and CI for all of them.</p>
+  <div class="links">
+    <a class="btn primary" href="https://www.linkedin.com/in/amnc-development/">LinkedIn</a>
+    <a class="btn" href="https://github.com/mirandanc">GitHub</a>
+    <a class="btn" href="mailto:miranda1991chaves@gmail.com">Email</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>120+</b><span>merged PRs in 2026</span></div>
+    <div class="stat"><b>~250</b><span>test files written</span></div>
+    <div class="stat"><b>4</b><span>production codebases</span></div>
+    <div class="stat"><b>500K+</b><span>transactions on the platform*</span></div>
+  </div>
+</header>
+
+<main>
+<h2>EasyPDV: self-checkout retail platform</h2>
+<p class="section-intro"><a href="https://easypdv.com.br">EasyPDV</a> runs autonomous mini-markets in condominiums and offices. Shoppers scan and pay at a kiosk (PIX or card) with no staff in the store. Behind it are a cloud ERP, warehouse operations and a mobile app for the people who restock the stores. It also powers <a href="https://despensinha.com.br">Despensinha</a>, an autonomous-market network in Northeast Brazil.</p>
+<p class="note">The code is my employer's and stays private. These case studies describe what I built and why, without code.</p>
+
+<article class="case">
+  <h3>Operator app: warehouse and store operations</h3>
+  <p class="role">Main developer · ~700 of ~900 commits · Nov 2025 – now · <a href="https://play.google.com/store/apps/details?id=br.com.uniolab.easypdv.operatorapp">Google Play</a></p>
+  <p>Operators separate orders, restock shelves, count inventory and check supplier deliveries, all from their phone or a handheld scanner. I've led the app from early on, on Android and iOS.</p>
+  <h4>What I built</h4>
+  <ul>
+    <li><b>Picklists and restocking:</b> create picklists per store and category, track separation, and restock with one tap per item or a "restock all".</li>
+    <li><b>Inventory:</b> scheduled and on-demand counts, plus product bundles (combos).</li>
+    <li><b>Barcode scanning:</b> a continuous camera scanner (CameraX + ML Kit) built into the inventory, separation and supply screens, with fixes for handheld scanners.</li>
+    <li><b>Damage photos:</b> camera capture, a local image store and a background uploader, so a weak connection never loses a photo. Shipped as a six-part stack of PRs.</li>
+    <li><b>Goods receipt:</b> check a supplier invoice item by item, with saving that holds up on a bad connection, then complete the receipt.</li>
+    <li><b>Release pipeline:</b> automated versioning, Google Play upload, and iOS signing and IPA export in GitHub Actions.</li>
+    <li>Firebase push notifications, sessions that renew tokens on their own, and features gated by account permissions.</li>
+  </ul>
+  <h4>Engineering</h4>
+  <ul>
+    <li>Moved the screens to an MVI architecture with dependency injection, which made them testable and predictable.</li>
+    <li>Quality gates: detekt, Konsist architecture rules, Kover coverage and SonarQube. Tests run on Robolectric and Turbine.</li>
+  </ul>
+  <div class="chips"><span class="chip">Kotlin</span><span class="chip">Compose Multiplatform</span><span class="chip">MVIKotlin</span><span class="chip">Koin</span><span class="chip">Ktor</span><span class="chip">Room</span><span class="chip">CameraX</span><span class="chip">ML Kit</span><span class="chip">Firebase</span><span class="chip">GitHub Actions</span></div>
+</article>
+
+<article class="case">
+  <h3>Sales risk analysis: catching theft at self-checkout</h3>
+  <p class="role">Designed and built end to end · Java API + React UI · Oct 2026</p>
+  <p>With no cashier present, losses show up as patterns in the data. I built a system that scores every self-checkout sale for suspicious behaviour, so managers can review the risky ones.</p>
+  <h4>What I built</h4>
+  <ul>
+    <li>Pluggable detectors, each with its own switch and weight: runs of cheap scans, long gaps between scans, abandoned sales, failed payments, items removed from the cart, risky hours, and watched products.</li>
+    <li>Sales are evaluated as they arrive from the kiosk. Bulk re-evaluation runs as a background job, with context loaded in batches to avoid N+1 queries.</li>
+    <li>A "most lost products" ranking that feeds the watch list.</li>
+    <li>In the admin: a suspicion card on each order, filters, per-signal settings with points and decay, and one-click "open an incident" with the sale pre-filled.</li>
+  </ul>
+  <h4>Engineering</h4>
+  <ul>
+    <li>Shipped as a chain of five reviewable PRs: config, watched products, evaluation, batch evaluation, listing.</li>
+    <li>About 20 test classes covering unit, persistence and controller tests.</li>
+  </ul>
+  <div class="chips"><span class="chip">Java 21</span><span class="chip">Spring Boot</span><span class="chip">JPA</span><span class="chip">MySQL</span><span class="chip">Liquibase</span><span class="chip">React</span><span class="chip">TypeScript</span></div>
+</article>
+
+<article class="case">
+  <h3>Announcements: required reading with read receipts</h3>
+  <p class="role">Designed and built end to end · Java API + React UI · Oct 2026</p>
+  <p>Operators work spread across many sites, and the company needed a way to make sure they actually read important notices.</p>
+  <ul>
+    <li>Full lifecycle: draft, publish, effective period, close. Targeting by recipient and role.</li>
+    <li>A rich-text editor (TipTap) with images, MP4/WebM video and YouTube embeds, with media stored in S3. Files are deleted only after the database transaction commits.</li>
+    <li>"Seen", "acknowledged" and "dismissed" states, an inbox shown at login, a real-time notification bell, and an acknowledgement report.</li>
+    <li>Receipts and bell entries are reserved atomically, and an integration test proves that under concurrency.</li>
+    <li>Queries use JPA Specifications instead of native SQL.</li>
+  </ul>
+  <div class="chips"><span class="chip">Spring Boot</span><span class="chip">JPA Specifications</span><span class="chip">AWS S3</span><span class="chip">Testcontainers</span><span class="chip">React 19</span><span class="chip">TipTap</span><span class="chip">Vitest</span><span class="chip">MSW</span></div>
+</article>
+
+<article class="case">
+  <h3>Nexus: syncing data from third-party systems</h3>
+  <p class="role">Main developer · ~97% of commits · Sep – Oct 2026</p>
+  <p>New customers arrive with their catalogue, stores and planograms in other systems. Nexus is a reconciliation service that brings that data into EasyPDV safely.</p>
+  <ul>
+    <li>Connector-based design: each external system plugs in as its own connector.</li>
+    <li>Sync runs compute a diff, and someone must approve it before anything is overwritten, item by item.</li>
+    <li>Products missing from a planogram are created in bulk. Retries and skips are counted, failures get reason codes, and every run produces an operation report.</li>
+    <li>An import wizard in the admin web app, with conflict resolution, server-side paging and progress streamed over SSE.</li>
+  </ul>
+  <div class="chips"><span class="chip">Bun</span><span class="chip">Elysia</span><span class="chip">Prisma</span><span class="chip">MySQL</span><span class="chip">Zod</span><span class="chip">React</span><span class="chip">Tailwind</span><span class="chip">SSE</span></div>
+</article>
+
+<article class="case">
+  <h3>More across the platform</h3>
+  <ul>
+    <li><b>Reports:</b> ABC-curve (Pareto) product report, unsold products, sales charts per point of sale.</li>
+    <li><b>Recurring appointments:</b> recurrence rules, editing "this one / following / all", and a calendar that expands occurrences.</li>
+    <li><b>Supplier invoices (NF-e):</b> goods-receipt check on mobile web, discrepancy filters, export.</li>
+    <li><b>Real-time telemetry alerts:</b> critical kiosk alerts pushed over SSE to a banner in the admin.</li>
+    <li><b>Stock tasks:</b> picking and restocking now start without one stock query per item.</li>
+    <li><b>Shared data table:</b> barcode scan-to-search, debounced search, selection that persists.</li>
+    <li><b>Barcode product lookup service</b> (Spring Boot): built the first version.</li>
+    <li><b>Customer and developer docs</b> (Docusaurus, Astro Starlight): fiscal, financial and CRM sections, plus search.</li>
+  </ul>
+</article>
+
+<h2>Side projects</h2>
+<div class="grid">
+  <article class="case">
+    <h3>Crafting Calculator</h3>
+    <p>Works out whether crafting an item in <i>World of Warcraft</i> is profitable. Auction-house prices come from the Battle.net API twice a day through GitHub Actions and are stored in Cloudflare KV.</p>
+    <p><a href="https://crafting-calculator.miranda-chaves.workers.dev">Live</a> · <a href="https://github.com/mirandanc/Crafting-Calculator">Code</a></p>
+    <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Cloudflare Workers</span><span class="chip">Vitest</span></div>
+  </article>
+  <article class="case">
+    <h3>simpleCheckList</h3>
+    <p>Android checklist app in Kotlin, built with Clean Architecture: use cases, repositories, and local and remote data sources.</p>
+    <p><a href="https://github.com/mirandanc/simpleCheckList">Code</a></p>
+    <div class="chips"><span class="chip">Jetpack Compose</span><span class="chip">Hilt</span><span class="chip">Room</span><span class="chip">Retrofit</span></div>
+  </article>
+</div>
+</main>
+
+<footer>
+  * Figure published on <a href="https://easypdv.com.br">easypdv.com.br</a>. Contribution figures come from my git history, up to November 2026.
+</footer>
+
+</div>
+</body>
+</html>
